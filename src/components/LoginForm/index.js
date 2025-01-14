@@ -19,17 +19,17 @@ class LoginForm extends Component {
   getsubmit = async event => {
     event.preventDefault()
     const {userPasswordInput, usernameInput} = this.state
-
-    //making request//
     const userDetails = {usernameInput, userPasswordInput}
+
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
     }
-    const response = await fetch('https://apis.ccbp.in/login', options)
-    const getdata=await response.json()
+    const url = 'https://apis.ccbp.in/login'
+    const response = await fetch(url, options)
+    const getdata = await response.json()
 
-    console.log(getdata)
+    console.log(response)
   }
 
   render() {
@@ -75,7 +75,7 @@ class LoginForm extends Component {
                   value={userPasswordInput}
                 />
               </div>
-              <button type="submit" className="btn">
+              <button type="Submit" className="btn">
                 Login
               </button>
             </div>
