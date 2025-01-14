@@ -16,13 +16,12 @@
 .login-img {
   height: 420px;
   width: 400px;
-  
 }
 .form-container {
   height: 420px;
   width: 400px;
   border: 1px solid black;
-  border-width: 3px ;
+  border-width: 3px;
 }
 .align {
   display: flex;
