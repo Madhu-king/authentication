@@ -20,16 +20,16 @@ class LoginForm extends Component {
     event.preventDefault()
     const {userPasswordInput, usernameInput} = this.state
     const userDetails = {usernameInput, userPasswordInput}
-
+    console.log(userDetails)
+    const url = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
     }
-    const url = 'https://apis.ccbp.in/login'
     const response = await fetch(url, options)
     const getdata = await response.json()
-
     console.log(response)
+    console.log(getdata)
   }
 
   render() {
