@@ -1,1 +1,93 @@
 /* Write your CSS code here */
+.final-container {
+  height: 700px;
+  background-size: cover;
+  border: 1px solid black;
+}
+.body-home-container {
+  /*margin: 30px;*/
+  margin: 5px;
+  height: 800px;
+  width: 99vw;
+  border: 0px solid yellow;
+  box-shadow: 0px 4px 16px 0px;
+  display: flex;
+  border-radius: 10px;
+}
+.body-text-container {
+  padding: 10px;
+  /* height: 700px;
+  width: 750px;*/
+  border: 0px solid;
+  margin: 10px;
+}
+.heading {
+  font-size: 50px;
+  color: #1e293b;
+  font-weight: bold;
+}
+.para {
+  color: #475569;
+  font-size: 20px;
+
+  font-family: 'Roboto';
+}
+.shopbtn {
+  height: 50px;
+  width: 150px;
+  background-color: #0b69ff;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.image-container {
+  height: 600px;
+  width: 400px;
+
+  margin: 10px;
+
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .body-text-container {
+    /* height:600px ;
+    width: 200px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    order: 1;
+  }
+  .heading {
+    font-size: 15px;
+  }
+  .para {
+    font-size: 15px;
+  }
+  .shopbtn {
+    height: 40px;
+    width: 100px;
+  }
+  .image-container {
+    height: 70px;
+    width: 70px;
+
+    display: flex;
+    flex-direction: column;
+    order: 0;
+  }
+  .body-home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .final-container {
+    height: 950px;
+  }
+}

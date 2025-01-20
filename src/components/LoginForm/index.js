@@ -6,6 +6,8 @@ class LoginForm extends Component {
   state = {
     usernameInput: '',
     userPasswordInput: '',
+    errorMsg: '',
+    erorState: false,
   }
 
   getusernme = event => {
@@ -16,11 +18,20 @@ class LoginForm extends Component {
     this.setState({userPasswordInput: event.target.value})
   }
 
+  success = () => {
+    const {history} = this.props
+    history.replace('/')
+  }
+
+  errorMessage = error => {
+    this.setState({errorMsg: error, erorState: true})
+  }
+
   getsubmit = async event => {
     event.preventDefault()
     const {userPasswordInput, usernameInput} = this.state
-    const userDetails = {usernameInput, userPasswordInput}
-    console.log(userDetails)
+    const userDetails = {username: usernameInput, password: userPasswordInput}
+
     const url = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
@@ -28,18 +39,22 @@ class LoginForm extends Component {
     }
     const response = await fetch(url, options)
     const getdata = await response.json()
-    console.log(response)
-    console.log(getdata)
+    if (response.ok === true) {
+      this.success()
+    } else {
+      this.errorMessage(getdata.error_msg)
+    }
   }
 
   render() {
-    const {usernameInput, userPasswordInput} = this.state
+    const {usernameInput, userPasswordInput, erorState, errorMsg} = this.state
 
     return (
       <div className="login-outer-container">
         <div className="inner-container">
           <img
             src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
+            alt="website login"
             className="login-img"
           />
           <form className="form-container" onSubmit={this.getsubmit}>
@@ -56,7 +71,7 @@ class LoginForm extends Component {
                   type="text"
                   className="user-input"
                   id="username"
-                  placeholder=" Username"
+                  placeholder="Username"
                   onChange={this.getusernme}
                   value={usernameInput}
                 />
@@ -70,14 +85,15 @@ class LoginForm extends Component {
                   type="password"
                   className="user-input"
                   id="password"
-                  placeholder=" Password"
+                  placeholder="Password"
                   onChange={this.getpassword}
                   value={userPasswordInput}
                 />
               </div>
-              <button type="Submit" className="btn">
+              <button type="submit" className="btn">
                 Login
               </button>
+              {erorState && <p className="error-msg">*{errorMsg}</p>}
             </div>
           </form>
         </div>

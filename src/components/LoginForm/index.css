@@ -18,7 +18,7 @@
   width: 400px;
 }
 .form-container {
-  height: 420px;
+  height: 480px;
   width: 400px;
   border: 1px solid black;
   border-width: 3px;
@@ -60,4 +60,10 @@
   color: white;
   font-size: 18px;
   border-radius: 5px;
+}
+
+.error-msg {
+  height: 30px;
+  width: 300px;
+  color: red;
 }
