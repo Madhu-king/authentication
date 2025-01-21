@@ -3,25 +3,32 @@ import './index.css'
 
 const Header = () => (
   <div className="navbar-container">
-    <div className="smalldevices-logo-container">
-      <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-        alt="website logo"
-        className="logo-size"
-      />
-      <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
-        className="logout-size-style"
-      />
+    <img
+      src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+      className="logo-size-1"
+      alt="website logo"
+    />
+    <div>
+      <div className="smalldevices-logo-container">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+          className="logo-size"
+          alt="website logo"
+        />
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
+          className="logout-size-style"
+          alt="nav logoout"
+        />
+      </div>
     </div>
+
     <div className="navbar-buttons-container">
-      <li className="btn-style">Home</li>
-      <li type="button" className="btn-style">
-        Product
-      </li>
-      <li type="button" className="btn-style">
-        Cart
-      </li>
+      <ul className="unorder-container">
+        <li className="btn-style">Home</li>
+        <li className="btn-style">Products</li>
+        <li className="btn-style">Cart</li>
+      </ul>
       <button type="button" className="logout-style">
         Logout
       </button>
